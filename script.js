@@ -3,6 +3,7 @@ function threeSum(arr, target) {
 	let n=arr.length;
 	let minDiff=Number.MAX_VALUE
 	let ans=Number.MAX_VALUE
+	let index=0
 	for(let i=0;i<n-2;i++){
 		currentTarget=target-arr[i];
 		let j=i+1;
@@ -14,6 +15,7 @@ function threeSum(arr, target) {
 			if(absDiff<minDiff){
 				minDiff=absDiff
 				ans=sum
+				index=i
 			}
 			
 			if(sum>currentTarget){
@@ -23,12 +25,12 @@ function threeSum(arr, target) {
 				j++;
 			}
 			else if(sum===currentTarget){
-				return sum;
+				return sum+arr[i];
 			}
 		}
 	
 	}
-	return ans;
+	return ans+arr[i];
 	
 	
 	
