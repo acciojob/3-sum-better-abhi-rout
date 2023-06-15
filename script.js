@@ -30,7 +30,7 @@ function threeSum(arr, target) {
 		}
 	
 	}
-	return ans+arr[i];
+	return ans+arr[index];
 	
 	
 	
