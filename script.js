@@ -1,6 +1,7 @@
 function threeSum(arr, target) {
 	arr.sort();
 	let n=arr.length;
+	let minDiff=Number.MAX_VALUE
 	let ans=Number.MAX_VALUE
 	for(let i=0;i<n-2;i++){
 		currentTarget=target-arr[i];
@@ -9,7 +10,11 @@ function threeSum(arr, target) {
 		let sum=0;
 	    while(j<k){
 			sum=arr[j]+arr[k];
-			ans=  Math.min(ans,Math.abs(currentTarget-sum))
+			let absDiff=Math.abs(currentTarget-sum)
+			if(absDiff<minDiff){
+				minDiff=absDiff
+				ans=sum
+			}
 			
 			if(sum>currentTarget){
 				k--;
